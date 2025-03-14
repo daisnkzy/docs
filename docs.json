@@ -9,14 +9,14 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
+        "language": "en",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
-              "introduction",
+              "welcome",
               "quickstart",
               "development"
             ]
@@ -31,12 +31,7 @@
               "essentials/navigation",
               "essentials/reusable-snippets"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
+          },
           {
             "group": "API Documentation",
             "pages": [
