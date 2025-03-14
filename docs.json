@@ -3,36 +3,71 @@
   "theme": "mint",
   "name": "StartEase .dev",
   "colors": {
-    "primary": "#F97316",
-    "light": "#07C983",
-    "dark": "#ff8904"
+    "primary": "#9A3412",
+    "light": "#EA580C",
+    "dark": "#9A3412"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-
-      "anchors": [
-    {
-      "anchor": "API References",
-      "icon": "sqaure-terminal",
-      "pages": [
-        "api-reference/get",
-        "api-reference/post",
-        "api-reference/delete"
-      ]
-    },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+   "navigation": {
+    "languages": [
+      {
+        "language": "en",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "welcome",
+              "quickstart",
+              "development"
+            ]
+          },
+          {
+            "group": "Essentials",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images",
+              "essentials/settings",
+              "essentials/navigation",
+              "essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoint Examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Documentation",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Community",
+              "href": "https://mintlify.com/community",
+              "icon": "slack"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
         }
-      ]
-     
-
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
