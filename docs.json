@@ -5,63 +5,21 @@
   "colors": {
     "primary": "#F97316",
     "light": "#07C983",
-    "dark": "#15803D"
+    "dark": "#ff8904"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "introduction",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
     "global": {
       "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
+    {
+      "anchor": "API References",
+      "icon": "sqaure-terminal",
+      "pages": [
+        "api-reference/get",
+        "api-reference/post",
+        "api-reference/delete"
+      ]
+    },
         {
           "anchor": "Community",
           "href": "https://mintlify.com/community",
@@ -72,31 +30,8 @@
           "href": "https://mintlify.com/blog",
           "icon": "newspaper"
         }
-      ],
-      "dropdowns": [
-    {
-      "dropdown": "Documentation",
-      "icon": "book-open",
-      "pages": [
-        "quickstart",
-        "development",
-        "navigation"
       ]
-    }
-    {
-      "dropdown": "API References",
-      "icon": "sqaure-terminal",
-      "pages": [
-        "api-reference/get",
-        "api-reference/post",
-        "api-reference/delete"
-      ]
-    }
-    {
-      "dropdown": "Blog",
-      "href": "https://external-link.com/blog"
-    }
-  ]
+     
     }
   },
   "logo": {
