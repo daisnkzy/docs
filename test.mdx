@@ -1,0 +1,77 @@
+---
+title: "Email"
+icon: "envelope"
+description: "Send transactional and marketing emails using Resend"
+---
+
+## Introduction
+
+[**Resend**](https://resend.com/nuxt) is used to **send marketing and transactional emails**. 
+
+**Why choose Resend?**
+
+- **Generous** free tier
+- **Friendly** to beginners
+- **Flawless** onboarding experience
+
+It is also recommended by the **creator of Nuxt**:
+
+<Frame>
+  ![images/截屏2025-03-1816.52.15.png](/images/截屏2025-03-1816.52.15.png)
+</Frame>
+
+## Setup Resend
+
+<Steps>
+  <Step title="Create API Key">
+    1. Head over to [Resend Onboarding](https://resend.com/onboarding)
+    2. Click **Add API Key**
+  </Step>
+  <Step title="Verify your domain">
+    On the same page, scroll down and click **Add domain**
+
+    **or **go to this page [**https://resend.com/domains**](https://resend.com/domains)
+
+    Once you complete, click **Verify DNS Record**
+  </Step>
+  <Step title="Audience ID (optional)">
+    Go to [https://resend.com/audiences](https://resend.com/audiences/97a201bc-5f10-47ff-b88b-c6ca7ce5ed3b), you can find the Audience ID
+
+    <Note>
+      This is used for the **waitlist** and **newsletter** feature as well as **email marketing**.
+    </Note>
+  </Step>
+  <Step title="Add the Keys">
+    Add the following keys to your `.env` file
+
+    ```bash
+     RESEND_API_KEY=
+     RESEND_AUDIENCE_ID=
+     FROM_EMAIL=
+    ```
+  </Step>
+</Steps>
+
+<Check>
+  🎉 Congrats\! Your application can send emails to potential customers\!
+</Check>
+
+## Send Email to Contacts
+
+<Tip>
+  You can create Contacts through the **waitlist** page, the **newsletter** component, or by **adding emails yourself**.
+</Tip>
+
+1. Go to <https://resend.com/broadcasts>
+2. Click **Create Broadcast**
+3. Start writing your email
+
+<Frame>
+  ![images/feature-broadcast4.png](/images/feature-broadcast4.png)
+
+                                                          example email template
+</Frame>
+
+<Check>
+  🎉 That's it\! Pretty easy, isn't it?
+</Check>
