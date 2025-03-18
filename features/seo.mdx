@@ -1,0 +1,118 @@
+---
+title: "SEO"
+icon: "magnifying-glass-chart"
+description: "Optimize your website for search engines"
+---
+
+## Metadata
+
+Just replace the information at `app.config.ts` file. And it's done.
+
+<CodeGroup>
+
+```javascript app.config.ts
+export default defineAppConfig({
+	seo: {
+		title: "Ease - Get and convert Customers with Ease",
+		description:
+			"Modern web templates, starter kits help you convert more customers.",
+		blogTitle: "Blogs - Ease",
+		ogTitle: "Get and convert Customers with Ease",
+		ogBlogTitle: "Easen Blogs 👋",
+		ogBlogDescription: "A collection of blogs from Ease",
+		ogSiteName: "ease.dev",
+	},
+});
+```
+
+</CodeGroup>
+
+## Robots & Sitemap
+
+Providing a `robots.txt` and `sitemap.xml` gives web crawlers data on how to index your site.
+
+<Check>
+  Good news\! The **robots.txt** and **sitemap.xml** are auto-generate for your project.
+</Check>
+
+StartEase has already made some adjustments for you.
+
+If you have specific requirements, here are **some recipes**:
+
+### **Block a page from being indexed**
+
+<CodeGroup>
+
+```javascript pages/dashboard.vue
+<script setup>
+useSeoMeta({
+  robots: 'noindex, follow'
+})
+</script>
+```
+
+</CodeGroup>
+
+### **Avoid duplicate content issues**
+
+<CodeGroup>
+
+```javascript pages/blog01.vue
+<script setup>
+useHead({
+  // make sure you use an absolute URL
+  link: [{ rel: 'canonical', href: 'https://your-website.com/blog01' }]
+})
+</script>
+```
+
+</CodeGroup>
+
+### **Block a group of pages**
+
+<CodeGroup>
+
+```javascript public/robots.txt
+User-agent: *
+Disallow: /dashboard
+```
+
+</CodeGroup>
+
+**or**
+
+<CodeGroup>
+
+```javascript nuxt.config.ts
+export default defineNuxtConfig({
+  robots: {
+    disallow: ['/admin', '/dashboard'],
+  }
+})
+```
+
+</CodeGroup>
+
+## Dynamic OG images
+
+OG images make your links look better when shared, so more people click on them.
+
+<Note>
+  This feature is **disabled by default** because it can make your production build a few megabytes larger.
+</Note>
+
+You can change it at `nuxt.config.ts `
+
+<CodeGroup>
+
+```javascript nuxt.config.ts
+	ogImage: {
+		enabled: false, //true or false
+	},
+```
+
+</CodeGroup>
+
+<Check>
+  🎉 Congrats\! The search engine is now satisfied with your website.
+</Check>

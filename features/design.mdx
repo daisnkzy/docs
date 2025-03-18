@@ -1,0 +1,111 @@
+---
+title: "Design"
+icon: "brush"
+description: "Build and customize your landing page with ease"
+---
+
+<Note>
+  This project uses [**Tailwind CSS**](https://tailwindcss.com/)  and [NuxtUI](https://ui2.nuxt.com/getting-started/installation) for styling.
+</Note>
+
+## **Project Structure**
+
+**Components are organized by category**, each located in its corresponding folder under `components`. For example:
+
+- Hero Section: `app/components/Hero`
+- Testimonial Section: `app/components/Testimonial`
+- Pricing Section: `app/components/Pricing`
+
+## **Theming**
+
+With NuxtUI, it's easy to customize your theme.
+
+<CodeGroup>
+
+```javascript app.config.ts
+export default defineAppConfig({
+	ui: {
+		primary: "blue",
+		gray: "slate",
+  }
+});
+```
+
+</CodeGroup>
+
+<Tip>
+  Visit the [NuxtUI Docs](https://ui2.nuxt.com/getting-started/theming) to learn more about customizing your components' look and feel.
+</Tip>
+
+## Landing Page
+
+### Header & Footer Components
+
+The `Header`and `Footer`components are in `app/layouts/default.vue`, ensuring they appear by default on all pages.
+
+<CodeGroup>
+
+```javascript layouts/default.vue
+<template>
+	<main id="default" class="relative flex flex-col w-full min-h-screen">
+		<Navbar />
+		<slot />
+		<Footer />
+	</main>
+</template>
+
+<style>
+// You can customize the background color of the landing page here
+#default {
+	@apply bg-white dark:bg-[#08090a];
+}
+</style>
+```
+
+</CodeGroup>
+<Note>
+If you don't want your page to have `<Navbar />` or `<Footer />`, you can change your page layout with the following code.
+</Note>
+
+
+```javascript
+<script setup>
+definePageMeta({
+	layout: "dashboard",
+});
+</script>
+```
+
+### Other Components
+
+With a simple copy and paste, you can create a beautiful, high-converting landing page. 🥳
+
+<CodeGroup>
+
+```javascript app/pages/index.vue
+<template>
+	<div class="z-10">
+		<Hero
+			title="Jumpstart Your SaaS with Ease Designed for Beginners"
+			description="Ease is a SaaS Starter Kit, simplifying the process of building a functional SaaS without worrying about landing pages, payments, SEO, or complex features."
+		/>
+		<LogoCloud />
+		<Feature />
+		<HowItWorks />
+		<Pricing />
+		<TestimonialGrid />
+		<FAQ />
+		<CTA />
+	</div>
+	<!-- <UIBackgroundRisingStars /> -->
+	<UIBackgroundShadowGrid />
+</template>
+```
+
+</CodeGroup>
+
+Don't forget to Edit the copy to fit your business logic.
+
+<Check>
+  🎉 Congrats you now have a beautiful landing page\!
+</Check>

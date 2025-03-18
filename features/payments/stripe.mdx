@@ -1,0 +1,50 @@
+---
+title: "Stripe"
+icon: "circle-dollar"
+description: "Learn how to use Stripe with StartEase"
+---
+
+<Steps>
+  <Step title="Create Stripe Account">
+    Before you start, make sure you have a Stripe account
+
+    You can create a free account [**here**](https://dashboard.stripe.com/register)
+  </Step>
+  <Step title="Get API Keys">
+    You can get your API keys from [**https://dashboard.stripe.com/test/developers**](https://dashboard.stripe.com/test/developers)
+
+    Add the following keys to your `.env` file
+
+    ```bash
+    STRIPE_SECRET_KEY=sk_test_1234567890
+    STRIPE_PUBLIC_KEY=pk_test_1234567890
+    ```
+  </Step>
+  <Step title="Create Products">
+    1. Head over to [**https://dashboard.stripe.com/products**](https://dashboard.stripe.com/products)
+    2. Click **Create product**
+    3. Enter the **name** of the product, set the **price**, and add a **description**
+    4. Set the billing period
+    5. You can create 2 variants for the product. One for the yearly plan and one for the monthly plan.
+  </Step>
+  <Step title="Webhook">
+    1. Head over to [**https://dashboard.stripe.com/test/webhooks**](https://dashboard.stripe.com/test/webhooks)
+    2. Click **Add endpoint**
+    3. Set the **Endpoint URL** to `https://your-domain.com/api/payment/webhook/stripe`
+    4. Select events to listen for:
+
+       ✅ customer.subscription.created
+
+       ✅ customer.subscription.updated
+
+       ✅ customer.subscription.deleted
+    5. Copy the **Signing secret** and add it to your `.env` file
+
+       ```bash
+       STRIPE_WEBHOOK_SECRET=whsec_1234567890
+       ```
+  </Step>
+</Steps>
+<Check>
+ 🎉 Congrats! You can make your first $ with Stripe now!
+</Check>

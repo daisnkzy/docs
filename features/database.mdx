@@ -1,0 +1,146 @@
+---
+title: "Database"
+icon: "database"
+description: "Learn how to use Drizzle ORM for your project."
+---
+
+StartEase is based on NuxtHub, which uses **Cloudflare D1**, a managed, serverless database built on **SQLite** to store and retrieve relational data.
+
+<Tip>
+  Good News\! You don't need to set up anything for your database.
+</Tip>
+
+## Database Schema
+
+<CodeGroup>
+
+```javascript server/database/schema.ts
+import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core'
+import { nanoid } from "nanoid";
+
+export const users = sqliteTable('users', {
+  id: text('id').primaryKey().$default(() => nanoid()),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
+  emailVerified: integer("emailVerified", { mode: "boolean" }).notNull().default(false),
+  avatar: text('avatar').notNull(),
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
+})
+```
+
+</CodeGroup>
+
+## **Database Utilities**
+
+### `useDB()`
+
+The `useDB()` composable allows you to conveniently reference your tables and interact directly with the [Drizzle API](https://orm.drizzle.team/docs/overview).
+
+```javascript
+export default defineEventHandler(async (event) => {
+  const user = await useDB()
+    .select()
+    .from(tables.users)
+    .where(eq(tables.users.name, name));
+  return user;
+});
+```
+
+### Select
+
+<CodeGroup>
+
+```javascript server/services/db/UserActions.js
+async findUserByUserId(userId) {
+	try {
+		const [existingUser] = await useDB()
+			.select()
+			.from(tables.users)
+			.where(eq(tables.users.id, userId));
+		return existingUser || null;
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
+}
+```
+
+</CodeGroup>
+
+### Insert
+
+<CodeGroup>
+
+```javascript server/services/db/UserActions.js
+async createUserWithEmail(email) {
+	try {
+		const record = await useDB()
+			.insert(tables.users)
+			.values({ email })
+			.onConflictDoNothing()
+			.returning()
+			.get();
+		return record;
+	} catch (error) {
+		console.error(error);
+		throw new Error("Failed to upsert user");
+	}
+}
+```
+
+</CodeGroup>
+
+### Update
+
+<CodeGroup>
+
+```javascript server/services/db/UserActions.js
+async updateUser(userId, payload) {
+	try {
+		const record = await useDB()
+			.update(tables.users)
+			.set(payload)
+			.where(eq(tables.users.id, userId))
+			.returning()
+			.get();
+		return record;
+	} catch (error) {
+		console.error(error);
+		throw new Error("Failed to update user");
+	}
+}
+```
+
+</CodeGroup>
+
+### Delete
+
+<CodeGroup>
+
+```javascript server/services/db/UserActions.js
+async deleteUser(userId) {
+	try {
+		const record = await useDB()
+			.delete(tables.users)
+			.where(eq(tables.users.id, userId))
+			.returning()
+			.get();
+		return record;
+	} catch (error) {
+		console.error(error);
+		throw new Error(`Failed to delete user: ${error}`);
+	}
+}
+```
+
+</CodeGroup>
+
+## **Database Migrations**
+
+Database migrations provide version control for your database schema.
+
+Migrations created with `npm run db:generate` are automatically applied during deployment, preview and when starting the development server.
+
+You can find the migrations in `server/database/migrations`.
+
+**Most of the time, you don't need to touch it.**

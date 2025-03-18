@@ -1,0 +1,59 @@
+---
+title: "Installation"
+description: "An overview of the StartEase starter kit"
+icon: "arrow-down-to-line"
+---
+
+## Prerequisites
+
+- [**Node.js 18+**](https://nodejs.org/en/download/)
+- [**PNPM** ](https://pnpm.io/installation)\- The package manager
+- [**Git**](https://git-scm.com/downloads)\- The version control system
+- [**VS Code**](https://code.visualstudio.com/)\- Code Editor
+- [**Cursor**](https://www.cursor.com/)\- Another AI code editor you can choose
+- [**GitHub**](https://github.com/)\- The code hosting service
+
+## Quick Setup
+
+<Steps>
+  <Step title="Create your own repository">
+    1. Go to the [StartEase template](https://github.com/StartEaseHQ/template)
+    2. Click `Use this template` button on the top right
+    3. Set visibility to **Private**
+    4. Click **Create repository**
+  </Step>
+  <Step title="Clone the repository ">
+    Clone the repository you just created in **Step 1**
+
+    ```sh
+    git clone <your-repo>
+    ```
+  </Step>
+  <Step title="Install dependencies">
+    Open your terminal
+
+    ```sh
+    cd your-repository-name
+    
+    #Install pnpm if you haven't already
+    npm install -g pnpm
+    
+    # Install dependencies
+    pnpm install
+    ```
+  </Step>
+  <Step title="Generate the migrations">
+    ```sh
+    npm run db:generate
+    ```
+  </Step>
+  <Step title="Start development">
+    ```sh
+    pnpm dev
+    ```
+  </Step>
+</Steps>
+
+<Check>
+  Go to `http://localhost:3000` - your website should be up and running\!
+</Check>

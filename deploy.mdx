@@ -1,0 +1,57 @@
+---
+title: "Deploy"
+description: "Deploy your site to NuxtHub in just a few clicks."
+icon: "cloud-check"
+---
+
+<Note>
+  To deploy your Nuxt application on the Edge, we use Cloudflare Pages. Therefore, we require you to create a [Cloudflare](https://www.cloudflare.com/) account. **You can deploy NuxtHub projects with a free Cloudflare account.**
+</Note>
+  ## Deploy to NuxtHub
+<Steps>
+  <Step title="NuxtHub Setup">
+    Sign In to [Nuxthub admin](https://admin.hub.nuxt.com) and click the **New Project** button.
+
+    <Frame>![images/nuxthub01.jpeg](/images/nuxthub01.jpeg)</Frame>
+  </Step>
+  <Step title="Import a Github repository">
+    1. Choose **Import a Github repository** and select the repo you want to deploy.
+     <Frame>![images/nuxthub02.jpeg](/images/nuxthub02.jpeg)</Frame>
+
+    2. Fill in the steps, Paste the environment variables you need, and click the **Import Repository** button. <Frame>![images/nuxthub03.jpeg](/images/nuxthub03.jpeg)</Frame>
+  </Step>
+</Steps>
+
+Nuxthub will start building your site. This will take around 2-3 minutes.
+
+<Info>
+  **The first build may fail** as NuxtHub sets up bindings, triggering an automatic redeployment. This is expected and can be ignored.
+</Info>
+
+## Local Development
+
+Once your project is deployed, you can use the remote storage in your local project.
+
+<Note>
+  Make sure you already have generated the migrations with 
+  `pnpm db:generate`
+</Note>
+
+Start your Nuxt project with:
+
+```sh
+npx nuxt dev --remote
+```
+
+**That's it\!** The migrations get applied manually to **Cloudflare D1**.
+
+## NuxtHub CLI
+
+If you make any changes to your code, you can deploy with a single command:
+
+```sh
+npx nuxthub deploy
+```
+<Tip>
+  You can access the [NuxtHub Docs](https://hub.nuxt.com/docs/getting-started/deploy) to learn more about the deployments and other nuxthub features.
+</Tip>

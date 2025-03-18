@@ -1,0 +1,98 @@
+---
+title: "Authentication"
+description: "Not just secure your SaaS application."
+icon: "circle-user"
+---
+
+## Introduction
+
+[StartEase](https://startease.dev/) uses [nuxt-auth-utils](https://github.com/Atinux/nuxt-auth-utils) for authentication. It provides effortless authentication for Nuxt apps with secure, sealed cookie-based sessions.
+
+<Tip>
+  Authentication is the **bridge** between **traffic and conversions**.
+</Tip>
+
+After extensive research, we've distilled the best practices into a login process that's as lightweight and effective as possible for StartEase.
+
+- **Minimalist Login Form.** Users only need to enter their email—nothing more.
+
+  > <Frame>![images/IMG_0668.jpg](/images/conversion.jpg)</Frame>
+  >
+  > A comparison of login friction across top streaming platforms, showing how fewer clicks lead to higher conversion rates.
+
+- **Passwordless Design.** Users hate remembering anything.
+
+  1. ✅ **No more** _"Your password must be at least 8 characters"._ 
+  2. ✅ **No more** "_Incorrect password, try again"._
+  3. ✅ **No more**  "_Reset Password"._
+
+When users log in for the first time, their information is stored in a cookie, so they don’t have to log in again.
+
+- **Simple Authentication Methods**
+  1. ✅ Social Logins (Google, GitHub, and more)
+  2. ✅ One-time Passwords (OTPs)
+  3. ✅ Magic Links
+
+  >_We’re not TikTok, Facebook, or Google. Most visitors come to our site out of curiosity._
+  >
+  >_Too many login options overwhelm users and slow them down._
+  >
+  >_Instead, we offer the simplest, most seamless ways to sign in._
+
+## Magic Link & OTPs
+
+Fill in the following variables in the `.env` file.
+
+```javascript
+ BASE_URL=
+ FROM_EMAIL=
+ RESEND_API_KEY=
+```
+
+You can get the `RESEND_API_KEY` from [Resend](https://resend.com/onboarding).
+
+If you want to test in the development environment, you can view the printed `email`, `oneTimePassword`, and `emailVerificationCode` in the terminal.
+
+## Social Logins
+
+<Note>
+  The **Github/Google**  OAuth credentials are not required if you are not using the Github/Google login feature. 
+</Note>
+### Google
+
+Fill in the following client variables in the `.env` file.
+
+```javascript
+ NUXT_OAUTH_GOOGLE_CLIENT_ID=
+ NUXT_OAUTH_GOOGLE_CLIENT_SECRET=
+```
+
+You can get the `client_id` and `client_secret` from  [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
+
+You can refer to my image for guidance.
+<Frame>
+![images/googleauth.png](/images/googleauth.png)
+</Frame>
+### GitHub
+
+Fill in the following client variables in the `.env` file.
+
+```javascript
+ NUXT_OAUTH_GITHUB_CLIENT_ID=
+ NUXT_OAUTH_GITHUB_CLIENT_SECRET=
+```
+
+You can get the `client_id` and `client_secret` from [GitHub Developer Settings](https://github.com/settings/developers).
+
+You can refer to my image for guidance.
+<Frame>
+![images/githubauth.png](/images/githubauth.png)
+</Frame>
+
+
+<Check>
+  **Congratulations** 🎉, people can now easily sign in to your Application.
+</Check>
+
+
+
