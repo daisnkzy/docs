@@ -1,0 +1,47 @@
+---
+title: "Analytics"
+description: "Setting up Umami Analytics to understand user behavior"
+icon: "chart-simple"
+---
+
+<Note>
+  Umami makes it easy to collect, analyze, and understand your website data — so you can focus on **growth**
+</Note>
+
+## Set up Umami
+
+<Steps>
+  <Step title="Create a Account">
+    You can create a **free** account on Umami Cloud [here](https://cloud.umami.is/signup?startease.dev)
+  </Step>
+  <Step title="Find Tracking Code">
+    Go to their dashboard, and find your website's **tracking code**
+
+    <Frame>
+      ![images/umami01.webp](/images/umami01.webp)
+
+      [source](https://umami.nuxt.dev/api/configuration)
+    </Frame>
+  </Step>
+  <Step title="Extract host and ID">
+    This is the case for both **Umami Cloud (recommend)** and **self-hosted** instances.
+
+    <Frame>
+      ![images/umami02.svg](/images/umami02.svg)
+
+      [source](https://umami.nuxt.dev/api/configuration)
+    </Frame>
+  </Step>
+  <Step title="Add the Keys">
+    Simply add `NUXT_UMAMI_HOST` and `NUXT_UMAMI_ID` to your `.env` file.
+
+    ```bash
+     NUXT_UMAMI_HOST=
+     NUXT_UMAMI_ID=
+    ```
+  </Step>
+</Steps>
+
+<Check>
+  🎉 Congrats! Data will start appearing on your dashboard immediately.
+</Check>
