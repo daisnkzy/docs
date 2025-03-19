@@ -45,12 +45,16 @@
           {
             "group": "Components",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "components/navbar",
+              "components/hero",
+              "components/logocloud",
+              "components/feature",
+              "components/how-it-works",
+              "components/pricing",
+              "components/testimonial",
+              "components/faq",
+              "components/cta",
+              "components/footer"
             ]
           }
         ]
