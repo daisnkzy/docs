@@ -1,0 +1,61 @@
+---
+title: "Waitlist"
+description: "Validate your idea and collect potential customers with the Waitlist"
+icon: "list-dropdown"
+---
+
+## Introduction
+
+<Note>
+  Waitlist Feature Powered by the `<HomeBroadcast/>` Component
+
+  You can find it in `components/Home/Broadcast`.
+</Note>
+
+<Frame>
+  ![images/feature-waitlist2.png](/images/feature-waitlist2.png)
+</Frame>
+
+### Why This Approach?
+
+I’ve done extensive research on waitlist implementations, and here’s what I found:
+
+- **The Traditional Way:**
+  1. Set up a database.
+  2. Build backend functionality to store emails.
+  3. Create an admin panel to manage them.
+  4. Users enter their email, and it gets saved in the database.
+  5. …And that’s it. No guidance on how to actually send emails to your list.
+- **The SaaS Way:**
+  1. Use a third-party waitlist service.
+  2. Integrate their API into your app.
+  3. Pay for both the email service and the waitlist SaaS.
+  4. **But bro, we’re a startup, not millionaires.**
+
+### A Smarter Solution
+
+I’ve reimagined the waitlist feature using **Resend’s new Broadcast feature**—a simple and efficient way to send bulk emails.
+
+**Why is this better?**\
+✅ **Already integrated into StartEase**—just start collecting emails anywhere.\
+✅ **No need to reinvent the wheel**—all emails automatically appear in Resend’s dashboard.\
+✅ **Full management system**—including automatic unsubscribes.\
+✅ **Generous free plan**—more than enough for most startups.
+
+![images/IntroductiontoAudiences.png](/images/IntroductiontoAudiences.png)
+
+This solution keeps things simple, cost-effective, and powerful. No extra backend, no additional SaaS fees.
+
+## Setup Waitlist
+
+1. Add the following key to your `.env` file:
+
+```bash
+RESEND_AUDIENCE_ID=
+```
+
+2. Edit the copy to fit your business logic
+
+<Check>
+  🎉 Congrats! Go tell the world you're **ready**!
+</Check>
